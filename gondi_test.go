@@ -3,7 +3,10 @@ This is a test file for gondi.go, it only tests two functions so far, so it shou
 */
 package gondi
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestGetVersion(t *testing.T) {
 	InitLibrary("")
@@ -15,6 +18,7 @@ func TestGetVersion(t *testing.T) {
 	if len(str) < 7 {
 		t.Error("Version string too short")
 	}
+	fmt.Printf("Version: %s\n", str)
 }
 
 func TestNewMetadataFrame(t *testing.T) {
