@@ -17,7 +17,7 @@ var (
 	ndilib_util_audio_from_interleaved_32f_v2 func(src uintptr, dst uintptr)
 	ndilib_util_audio_to_interleaved_32f_v2   func(src uintptr, dst uintptr)
 
-	ndilib_send_create_v2                 func(settings uintptr) uintptr
+	ndilib_send_create                    func(settings uintptr) uintptr
 	ndilib_send_destroy                   func(instance uintptr)
 	ndilib_send_send_video_v2             func(instance uintptr, frame uintptr)
 	ndilib_send_send_video_async_v2       func(instance uintptr, frame uintptr)
@@ -97,7 +97,7 @@ func InitLibrary(libraryPath string) error {
 		purego.RegisterLibFunc(&ndilib_util_audio_from_interleaved_32f_v2, ndi_shared_library, "NDIlib_util_audio_from_interleaved_32f_v2")
 		purego.RegisterLibFunc(&ndilib_util_audio_to_interleaved_32f_v2, ndi_shared_library, "NDIlib_util_audio_to_interleaved_32f_v2")
 
-		purego.RegisterLibFunc(&ndilib_send_create_v2, ndi_shared_library, "NDIlib_send_create_v2")
+		purego.RegisterLibFunc(&ndilib_send_create, ndi_shared_library, "NDIlib_send_create")
 		purego.RegisterLibFunc(&ndilib_send_destroy, ndi_shared_library, "NDIlib_send_destroy")
 		purego.RegisterLibFunc(&ndilib_send_send_video_v2, ndi_shared_library, "NDIlib_send_send_video_v2")
 		purego.RegisterLibFunc(&ndilib_send_send_video_async_v2, ndi_shared_library, "NDIlib_send_send_video_async_v2")
