@@ -11,7 +11,7 @@ func NewSendInstance(name string, groups string, clockVideo bool, clockAudio boo
 	assertLibrary()
 
 	settings := &sendCreateSettings{cString(name), cString(groups), clockVideo, clockAudio}
-	instance := ndilib_send_create_v2(uintptr(unsafe.Pointer(settings)))
+	instance := ndilib_send_create(uintptr(unsafe.Pointer(settings)))
 	if instance == 0 {
 		return nil, errors.New("unable to create send instance")
 	}
